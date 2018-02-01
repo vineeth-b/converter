@@ -1,0 +1,405 @@
+void loop()
+{ 
+  binary();
+
+}
+
+void binary ()
+{
+  digitsum1 = digitalRead(digit1);
+  digitsum2 = digitalRead(digit2);
+  digitsum3 = digitalRead(digit3);
+  digitsum4 = digitalRead(digit4);
+  digitsum5 = digitalRead(digit5);
+
+  lcd.setCursor(0, 0);
+
+  if ((digitsum1 == LOW) and (digitsum2 == LOW) and (digitsum3 == LOW) and (digitsum4 == LOW) and (digitsum5 == LOW)) {
+      zero();
+  }
+  else if ((digitsum1 == HIGH) and (digitsum2 == LOW) and (digitsum3 == LOW) and (digitsum4 == LOW) and (digitsum5 == LOW)) {
+      one();
+  }
+  else if ((digitsum1 == LOW) and (digitsum2 == HIGH) and (digitsum3 == LOW) and (digitsum4 == LOW) and (digitsum5 == LOW)) {
+      two();
+  }
+  else if ((digitsum1 == HIGH) and (digitsum2 == HIGH) and (digitsum3 == LOW) and (digitsum4 == LOW) and (digitsum5 == LOW)) {
+      three();    
+  }
+  else if ((digitsum1 == LOW) and (digitsum2 == LOW) and (digitsum3 == HIGH) and (digitsum4 == LOW) and (digitsum5 == LOW)) {
+      four();
+  }
+  else if ((digitsum1 == HIGH) and (digitsum2 == LOW) and (digitsum3 == HIGH) and (digitsum4 == LOW) and (digitsum5 == LOW)) {
+      five();
+  }
+  else if ((digitsum1 == LOW) and (digitsum2 == HIGH) and (digitsum3 == HIGH) and (digitsum4 == LOW) and (digitsum5 == LOW)) {
+      six();
+  }
+  else if ((digitsum1 == HIGH) and (digitsum2 == HIGH) and (digitsum3 == HIGH) and (digitsum4 == LOW) and (digitsum5 == LOW)) {
+      seven();
+  }
+  else if ((digitsum1 == LOW) and (digitsum2 == LOW) and (digitsum3 == LOW) and (digitsum4 == HIGH) and (digitsum5 == LOW)) {
+      eight();
+  }
+  else if ((digitsum1 == HIGH) and (digitsum2 == LOW) and (digitsum3 == LOW) and (digitsum4 == HIGH) and (digitsum5 == LOW)) {
+      nine();
+  }
+  else if ((digitsum1 == LOW) and (digitsum2 == HIGH) and (digitsum3 == LOW) and (digitsum4 == HIGH) and (digitsum5 == LOW)) {
+      ten();
+  }
+  else if ((digitsum1 == HIGH) and (digitsum2 == HIGH) and (digitsum3 == LOW) and (digitsum4 == HIGH) and (digitsum5 == LOW)) {
+      eleven();
+  }
+  else if ((digitsum1 == LOW) and (digitsum2 == LOW) and (digitsum3 == HIGH) and (digitsum4 == HIGH) and (digitsum5 == LOW)) {
+      twelve();
+  }
+  else if ((digitsum1 == HIGH) and (digitsum2 == LOW) and (digitsum3 == HIGH) and (digitsum4 == HIGH) and (digitsum5 == LOW)) {
+      thirteen();
+  }
+  else if ((digitsum1 == LOW) and (digitsum2 == HIGH) and (digitsum3 == HIGH) and (digitsum4 == HIGH) and (digitsum5 == LOW)) {
+      fourteen();
+  }
+  else if ((digitsum1 == HIGH) and (digitsum2 == HIGH) and (digitsum3 == HIGH) and (digitsum4 == HIGH) and (digitsum5 == LOW)) {
+      fifteen();
+  }
+  else if ((digitsum1 == LOW) and (digitsum2 == LOW) and (digitsum3 == LOW) and (digitsum4 == LOW) and (digitsum5 == HIGH)) {
+      sixteen();
+  }
+  else if ((digitsum1 == HIGH) and (digitsum2 == LOW) and (digitsum3 == LOW) and (digitsum4 == LOW) and (digitsum5 == HIGH)) {
+      seventeen();
+  }
+  else if ((digitsum1 == LOW) and (digitsum2 == HIGH) and (digitsum3 == LOW) and (digitsum4 == LOW) and (digitsum5 == HIGH)) {
+      eighteen();
+  }
+  else if ((digitsum1 == HIGH) and (digitsum2 == HIGH) and (digitsum3 == LOW) and (digitsum4 == LOW) and (digitsum5 == HIGH)) {
+      nineteen();
+  }
+  else if ((digitsum1 == LOW) and (digitsum2 == LOW) and (digitsum3 == HIGH) and (digitsum4 == LOW) and (digitsum5 == HIGH)) {
+      twenty();
+  }
+  else if ((digitsum1 == HIGH) and (digitsum2 == LOW) and (digitsum3 == HIGH) and (digitsum4 == LOW) and (digitsum5 == HIGH)) {
+      twenty_one();
+  }
+  else if ((digitsum1 == LOW) and (digitsum2 == HIGH) and (digitsum3 == HIGH) and (digitsum4 == LOW) and (digitsum5 == HIGH)) {
+      twenty_two();
+  }
+  else if ((digitsum1 == HIGH) and (digitsum2 == HIGH) and (digitsum3 == HIGH) and (digitsum4 == LOW) and (digitsum5 == HIGH)) {
+      twenty_three();
+  }
+  else if ((digitsum1 == LOW) and (digitsum2 == LOW) and (digitsum3 == LOW) and (digitsum4 == HIGH) and (digitsum5 == HIGH)) {
+      twenty_four();
+  }
+  else if ((digitsum1 == HIGH) and (digitsum2 == LOW) and (digitsum3 == LOW) and (digitsum4 == HIGH) and (digitsum5 == HIGH)) {
+      twenty_five();
+  }
+  else if ((digitsum1 == LOW) and (digitsum2 == HIGH) and (digitsum3 == LOW) and (digitsum4 == HIGH) and (digitsum5 == HIGH)) {
+      twenty_six();
+  }
+  else if ((digitsum1 == HIGH) and (digitsum2 == HIGH) and (digitsum3 == LOW) and (digitsum4 == HIGH) and (digitsum5 == HIGH)) {
+      twenty_seven();
+  }
+  else if ((digitsum1 == LOW) and (digitsum2 == LOW) and (digitsum3 == HIGH) and (digitsum4 == HIGH) and (digitsum5 == HIGH)) {
+      twenty_eight();
+  }
+  else if ((digitsum1 == HIGH) and (digitsum2 == LOW) and (digitsum3 == HIGH) and (digitsum4 == HIGH) and (digitsum5 == HIGH)) {
+      twenty_nine();
+  }
+  else if ((digitsum1 == LOW) and (digitsum2 == HIGH) and (digitsum3 == HIGH) and (digitsum4 == HIGH) and (digitsum5 == HIGH)) {
+      thirty();
+  }
+  else {
+      thirty_one();
+  }
+}
+
+void zero ()
+{
+   lcd.print("Decimal #= 00");
+   setColor(0, 255, 0);
+   delay(1000);
+   setColor(0, 0, 0);
+   delay(1000);
+}
+
+void one ()
+{
+   lcd.print("Decimal #= 01");
+   setColor(0, 0, 255);
+   delay(1000);
+   setColor(0, 0, 0);
+   delay(1000);
+}
+
+void two ()
+{
+      lcd.print("Decimal #= 02");
+    setColor(255, 0, 0);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+
+}
+
+void three ()
+{
+      lcd.print("Decimal #= 03");
+    setColor(255, 255, 0);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+
+}
+
+void four ()
+{
+      lcd.print("Decimal #= 04");
+    setColor(80, 0, 80);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+
+}
+
+void five ()
+{
+    lcd.print("Decimal #= 05");
+    setColor(0, 255, 255);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+void six ()
+{
+    lcd.print("Decimal #= 06");
+    setColor(244, 65, 189);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+void seven ()
+{
+    lcd.print("Decimal #= 07");
+    setColor(79, 244, 65);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+void eight ()
+{
+    lcd.print("Decimal #= 08");
+    setColor(0, 128, 128);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+void nine ()
+{
+    lcd.print("Decimal #= 09");
+    setColor(0, 255, 0);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+void ten ()
+{
+    lcd.print("Decimal #= 10");
+    setColor(0, 0, 255);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+void eleven ()
+{
+    lcd.print("Decimal #= 11");
+    setColor(255, 0, 0);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+void twelve ()
+{
+    lcd.print("Decimal #= 12");
+    setColor(255, 255, 0);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+void thirteen ()
+{
+    lcd.print("Decimal #= 13");
+    setColor(80, 0, 80);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+void fourteen ()
+{
+    lcd.print("Decimal #= 14");
+    setColor(0, 255, 255);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+void fifteen ()
+{
+    lcd.print("Decimal #= 15");
+    setColor(244, 65, 189);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+void sixteen ()
+{
+    lcd.print("Decimal #= 16");
+    setColor(79, 244, 65);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+void seventeen ()
+{
+    lcd.print("Decimal #= 17");
+    setColor(0, 128, 128);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+void eighteen ()
+{
+    lcd.print("Decimal #= 18");
+    setColor(0, 255, 0);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+void nineteen ()
+{
+    lcd.print("Decimal #= 19");
+    setColor(0, 0, 255);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+void twenty () 
+{
+    lcd.print("Decimal #= 20");
+    setColor(255, 0, 0);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);  
+}
+
+void twenty_one ()
+{
+    lcd.print("Decimal #= 21");
+    setColor(255, 255, 0);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+void twenty_two ()
+{
+    lcd.print("Decimal #= 22");
+    setColor(80, 0, 80);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+void twenty_three ()
+{
+    lcd.print("Decimal #= 23");
+    setColor(244, 65, 189);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+void twenty_four ()
+{
+    lcd.print("Decimal #= 24");
+    setColor(79, 244, 65);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+void twenty_five ()
+{
+    lcd.print("Decimal #= 25");
+    setColor(0, 128, 128);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+void twenty_six ()
+{
+    lcd.print("Decimal #= 26");
+    setColor(0, 255, 0);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+void twenty_seven ()
+{
+    lcd.print("Decimal #= 27");
+    setColor(0, 0, 255);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+void twenty_eight ()
+{
+    lcd.print("Decimal #= 28");
+    setColor(255, 0, 0);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+void twenty_nine ()
+{
+    lcd.print("Decimal #= 29");
+    setColor(255, 255, 0);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+void thirty ()
+{
+    lcd.print("Decimal #= 30");
+    setColor(80, 0, 80);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+void thirty_one ()
+{
+    lcd.print("Decimal #= 00");
+    setColor(0, 255, 0);
+    delay(1000);
+    setColor(0, 0, 0);
+    delay(1000);
+}
+
+
+
